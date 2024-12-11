@@ -41,11 +41,6 @@
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>5.0.9</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava-apis -->
         <dependency>
             <groupId>com.github.scribejava</groupId>
@@ -60,29 +55,16 @@
             <version>1.0.2</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
 
 
 
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- Surefire plugin for running tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M8</version> <!-- Güncel sürümü kontrol edin -->
-                <configuration>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>api.utilities.ExtentReportManager</value>
-                        </property>
-                    </properties>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
