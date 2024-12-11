@@ -4,6 +4,8 @@ import api.endpoints.PetEndPoints;
 import api.endpoints.Routes;
 import api.payload.Pet;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -43,6 +45,7 @@ public class Pet_Tests {
     }
 
     @Test
+    @Description("This test verifies the creation of a new pet")
     public void testPostPet() {
         Response response = PetEndPoints.createPet(petPayload);
         response.then().log().all();
@@ -79,6 +82,7 @@ public class Pet_Tests {
         Assert.assertEquals(responseAfterUpdate.getBody().jsonPath().getString("name"), petPayload.getName()); // Güncel isim kontrolü
     }
 
+    @Step("Delete Pet with ID: {id}")
     @Test(dependsOnMethods = {"testUpdatePet"})
     public void testDeletePetById() throws InterruptedException {
         System.out.println("Deleting Pet with ID: " + createdId);
