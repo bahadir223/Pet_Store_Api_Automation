@@ -60,7 +60,12 @@
             <version>2.20.1</version> <!-- Mevcut en güncel sürümü kontrol edin -->
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
 
 
 
